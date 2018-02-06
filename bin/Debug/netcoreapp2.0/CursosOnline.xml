@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjetoUniversidade</name>
+    </assembly>
+    <members>
+        <member name="M:ProjetoUniversidade.Controllers.AreaController.ListarArea">
+            <summary>
+            Listar Area
+            </summary>
+            <returns>Lista de Areas</returns>
+            <response code="200">Retorna uma lista de areas</response>
+            <response code="400">Ocorreu um erro</response>
+        </member>
+        <member name="M:ProjetoUniversidade.Controllers.AreaController.ListarArea(System.Int32)">
+            <summary>
+            Busca uma área pelo seu ID
+            </summary>
+            <param name="id">ID da área</param>
+            <returns>Retorna uma área</returns>
+            <response code="200">Retorna uma área</response>
+            <response code="400">Ocorreu um erro</response>
+            <response code="404">Area não encontrada</response>
+        </member>
+        <member name="M:ProjetoUniversidade.Controllers.AreaController.PostarArea(ProjetoUniversidade.Models.Area)">
+            <summary>
+            Cadastra uma nova área
+            </summary>
+            <param name="area">Nova área para registrar</param>
+            <remarks>
+            Modelo de dados que deve ser enviado para cadastrar para a area:
+            
+                POST /Area
+                {
+                    "nome" : "nome da area"
+                }    
+            </remarks>
+            <response code="200">Retorna uma área cadastrada</response>
+            <response code="400">Ocorreu um erro</response>
+        </member>
+        <member name="M:ProjetoUniversidade.Controllers.AreaController.DeletarArea(System.Int32)">
+            <summary>
+            Apaga uma area
+            </summary>
+            <param name="id">ID da area que sera apagada</param>
+            <remarks>
+            Modelo da área que irá ser apagada request:
+            
+                PUT /Area
+                {
+                    "idarea" : 0,
+                    "nomearea" : "Nome da área atualizado"
+                }
+            </remarks>
+            <returns>Retorna a area apagada</returns>
+            <response code="200">Retorna uma área apagada</response>
+            <response code="400">Ocorreu um erro</response>
+        </member>
+        <member name="M:ProjetoUniversidade.Controllers.AreaController.AtualizarArea(ProjetoUniversidade.Models.Area)">
+            <summary>
+            Atualiza uma área
+            </summary>
+            <param name="area">ID da área que vai ser atualizada</param>
+            <remarks>
+            Modelo da área que irá ser atualizada request:
+            
+                PUT /Area
+                {
+                    "idarea" : 0,
+                    "nomearea" : "Nome da área atualizado"
+                }
+            </remarks>
+            <returns>Retorna a area atualizada</returns>
+            <response code="200">Retorna uma área cadastrada</response>
+            <response code="400">Ocorreu um erro</response>
+        </member>
+        <member name="M:ProjetoUniversidade.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configure os serviços
+            </summary>
+            <param name="app">app</param>
+            <param name="env">env</param>
+        </member>
+    </members>
+</doc>
